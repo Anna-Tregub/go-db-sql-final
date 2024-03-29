@@ -69,7 +69,7 @@ func (s ParcelStore) GetByClient(client int) ([]Parcel, error) {
 
 	err = rows.Err()
 	if err != nil {
-		log.Fatal(err)
+		log.Println(err)
 	}
 
 	return res, nil
