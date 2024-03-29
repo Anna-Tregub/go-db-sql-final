@@ -46,7 +46,7 @@ func TestAddGetDelete(t *testing.T) {
 	require.NoError(t, err)
 
 	res, err = store.Get(parcel.Number)
-	require.Empty(t, res)
+	require.ErrorIs(t, err, sql.ErrNoRows)
 }
 
 func TestSetAddress(t *testing.T) {
